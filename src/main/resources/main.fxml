@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ru.voneska.fx.MainSceneController"
+            fx:id="borderPane">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<Menu mnemonicParsing="false" text="File">
+				<MenuItem fx:id="mainMenuOpenBtn" mnemonicParsing="false" text="&amp;Open"/>
+				<MenuItem mnemonicParsing="false" text="Close"/>
+			</Menu>
+			<Menu mnemonicParsing="false" text="Edit">
+				<MenuItem mnemonicParsing="false" text="Delete"/>
+			</Menu>
+			<Menu mnemonicParsing="false" text="Help">
+				<MenuItem mnemonicParsing="false" text="About"/>
+			</Menu>
+		</MenuBar>
+	</top>
+	<bottom>
+		<Label fx:id="label" text="Label"/>
+	</bottom>
+	<center>
+		<ImageView fx:id="imageView" fitHeight="353.0" fitWidth="593.0" pickOnBounds="true" preserveRatio="true"
+		           BorderPane.alignment="CENTER"/>
+	</center>
+</BorderPane>
