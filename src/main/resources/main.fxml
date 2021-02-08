@@ -1,34 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="ru.voneska.fx.MainSceneController"
-            fx:id="borderPane">
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="281.0" prefWidth="639.0" style="-fx-border-color:black" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.voneska.fx.MainSceneController">
 	<top>
-		<MenuBar BorderPane.alignment="CENTER">
+		<MenuBar prefWidth="653.0" BorderPane.alignment="CENTER">
 			<Menu mnemonicParsing="false" text="File">
-				<MenuItem fx:id="mainMenuOpenBtn" mnemonicParsing="false" text="&amp;Open"/>
-				<MenuItem mnemonicParsing="false" text="Close"/>
+				<MenuItem fx:id="mainMenuOpenBtn" mnemonicParsing="false" text="Open" />
+				<MenuItem mnemonicParsing="false" text="Close" />
 			</Menu>
 			<Menu mnemonicParsing="false" text="Edit">
-				<MenuItem mnemonicParsing="false" text="Delete"/>
+				<MenuItem mnemonicParsing="false" text="Delete" />
 			</Menu>
 			<Menu mnemonicParsing="false" text="Help">
-				<MenuItem mnemonicParsing="false" text="About"/>
+				<MenuItem mnemonicParsing="false" text="About" />
 			</Menu>
 		</MenuBar>
 	</top>
-	<bottom>
-		<Label fx:id="label" text="Label"/>
-	</bottom>
-	<center>
-		<ImageView fx:id="imageView" fitHeight="353.0" fitWidth="593.0" pickOnBounds="true" preserveRatio="true"
-		           BorderPane.alignment="CENTER"/>
-	</center>
+   <right>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="startButton" alignment="TOP_CENTER" mnemonicParsing="false" text="Start" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+         </children>
+      </GridPane>
+   </right>
+   <center>
+      <Pane fx:id="pane" BorderPane.alignment="CENTER">
+         <children>
+      			<ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="true" style="-fx-border-color: blue;" />
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </Pane>
+   </center>
+   <bottom>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="25.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField alignment="TOP_LEFT" editable="false" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <ProgressBar prefWidth="200.0" progress="0.0" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <TextField editable="false" />
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>
